@@ -24,7 +24,7 @@ func handle(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	fibIndex, err := readParamInt(params, paramkeyFib)
+	fibInt, err := readParamInt(params, paramkeyFib)
 	if err != nil {
 		respondError(w, 400, err)
 		return
@@ -34,8 +34,8 @@ func handle(w http.ResponseWriter, r *http.Request) {
 		time.Sleep(time.Duration(delayMS) * time.Millisecond)
 	}
 
-	if fibIndex > 0 {
-		fibonacci(fibIndex) //nolint
+	if fibInt > 0 {
+		fibonacci(fibInt) //nolint
 	}
 }
 
