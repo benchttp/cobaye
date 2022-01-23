@@ -18,7 +18,7 @@ const (
 func handle(w http.ResponseWriter, r *http.Request) {
 	params := r.URL.Query()
 
-	delayMS, err := readParamInt(params, paramkeyDelay)
+	delay, err := readParamDuration(params, paramkeyDelay)
 	if err != nil {
 		respondError(w, 400, err)
 		return
@@ -30,8 +30,8 @@ func handle(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if delayMS > 0 {
-		time.Sleep(time.Duration(delayMS) * time.Millisecond)
+	if delay > 0 {
+		time.Sleep(delay)
 	}
 
 	if fibInt > 0 {
@@ -51,6 +51,20 @@ func readParamInt(params url.Values, key paramkey) (int, error) {
 	}
 
 	return n, nil
+}
+
+func readParamDuration(params url.Values, key paramkey) (time.Duration, error) {
+	raw := params.Get(string(key))
+	if raw == "" {
+		return 0, nil
+	}
+
+	d, err := time.ParseDuration(raw)
+	if err != nil {
+		return 0, fmt.Errorf("invalid param: %s: want parsable duration, got %s", key, raw)
+	}
+
+	return d, nil
 }
 
 func respondError(w http.ResponseWriter, code int, err error) {
