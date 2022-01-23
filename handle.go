@@ -5,7 +5,6 @@ import (
 	"net/http"
 	"net/url"
 	"strconv"
-	"sync"
 	"time"
 )
 
@@ -20,22 +19,17 @@ const (
 	paramkeyFib   paramkey = "fib"
 )
 
-var (
-	mu            = sync.Mutex{}
-	totalRequests = 0
-)
-
-func handleMain(w http.ResponseWriter, r *http.Request) {
+func (s *server) handleMain(w http.ResponseWriter, r *http.Request) {
 	switch r.URL.Path {
 	case string(urlpathDebug):
-		handleDebug(w, r)
+		s.handleDebug(w, r)
 	default:
-		handleRequest(w, r)
+		s.handleRequest(w, r)
 	}
 }
 
-func handleRequest(w http.ResponseWriter, r *http.Request) {
-	incrementTotalRequests()
+func (s *server) handleRequest(w http.ResponseWriter, r *http.Request) {
+	s.incrementTotalRequests()
 
 	params := r.URL.Query()
 
@@ -60,9 +54,11 @@ func handleRequest(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func handleDebug(w http.ResponseWriter, _ *http.Request) {
-	w.Write([]byte(strconv.Itoa(totalRequests)))
+func (s *server) handleDebug(w http.ResponseWriter, _ *http.Request) {
+	w.Write([]byte(strconv.Itoa(s.totalRequests)))
 }
+
+// helpers
 
 func readParamInt(params url.Values, key paramkey) (int, error) {
 	raw := params.Get(string(key))
@@ -95,10 +91,4 @@ func readParamDuration(params url.Values, key paramkey) (time.Duration, error) {
 func respondError(w http.ResponseWriter, code int, err error) {
 	w.WriteHeader(code)
 	w.Write([]byte(err.Error()))
-}
-
-func incrementTotalRequests() {
-	mu.Lock()
-	totalRequests++
-	mu.Unlock()
 }

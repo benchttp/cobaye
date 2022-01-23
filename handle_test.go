@@ -11,6 +11,8 @@ import (
 )
 
 func TestHandleRequest(t *testing.T) {
+	s := server{}
+
 	t.Run("request with delay param", func(t *testing.T) {
 		const (
 			delay  = 100 * time.Millisecond
@@ -21,7 +23,7 @@ func TestHandleRequest(t *testing.T) {
 
 		r := httptest.NewRequest("", fmt.Sprintf("/?delay=%dms", delay.Milliseconds()), nil)
 
-		testx.HTTPHandlerFunc(handleRequest).WithRequest(r).
+		testx.HTTPHandlerFunc(s.handleRequest).WithRequest(r).
 			Response(checkStatusCode(200)).
 			Duration(check.Duration.InRange(expmin, expmax)).
 			Run(t)
@@ -36,7 +38,7 @@ func TestHandleRequest(t *testing.T) {
 
 		r := httptest.NewRequest("", fmt.Sprintf("/?fib=%d", fib), nil)
 
-		testx.HTTPHandlerFunc(handleRequest).WithRequest(r).
+		testx.HTTPHandlerFunc(s.handleRequest).WithRequest(r).
 			Response(checkStatusCode(200)).
 			Duration(check.Duration.InRange(expmin, expmax)).
 			Run(t)
@@ -45,7 +47,7 @@ func TestHandleRequest(t *testing.T) {
 	t.Run("request without params", func(t *testing.T) {
 		const expmax = 3 * time.Millisecond
 
-		testx.HTTPHandlerFunc(handleRequest).
+		testx.HTTPHandlerFunc(s.handleRequest).
 			Response(checkStatusCode(200)).
 			Duration(check.Duration.Under(expmax)).
 			Run(t)
@@ -56,7 +58,7 @@ func TestHandleRequest(t *testing.T) {
 
 		r := httptest.NewRequest("", "/?delay=hey&fib=100", nil)
 
-		testx.HTTPHandlerFunc(handleRequest).WithRequest(r).
+		testx.HTTPHandlerFunc(s.handleRequest).WithRequest(r).
 			Response(checkStatusCode(400)).
 			Duration(check.Duration.Under(expmax)).
 			Run(t)
