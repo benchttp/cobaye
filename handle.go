@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"net/url"
 	"strconv"
+	"sync"
 	"time"
 )
 
@@ -15,7 +16,14 @@ const (
 	paramkeyFib   paramkey = "fib"
 )
 
+var (
+	mu            = sync.Mutex{}
+	totalRequests = 0
+)
+
 func handle(w http.ResponseWriter, r *http.Request) {
+	incrementTotalRequests()
+
 	params := r.URL.Query()
 
 	delay, err := readParamDuration(params, paramkeyDelay)
@@ -70,4 +78,10 @@ func readParamDuration(params url.Values, key paramkey) (time.Duration, error) {
 func respondError(w http.ResponseWriter, code int, err error) {
 	w.WriteHeader(code)
 	w.Write([]byte(err.Error()))
+}
+
+func incrementTotalRequests() {
+	mu.Lock()
+	totalRequests++
+	mu.Unlock()
 }

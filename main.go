@@ -1,10 +1,12 @@
 package main
 
 import (
+	"bufio"
 	"flag"
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 )
 
 const defaultPort = "9999"
@@ -18,5 +20,25 @@ func main() {
 	handler := http.HandlerFunc(handle)
 
 	fmt.Printf("http://localhost:%s\n", *port)
-	log.Fatal(http.ListenAndServe(addr, handler))
+	go func() {
+		log.Fatal(http.ListenAndServe(addr, handler))
+	}()
+
+	log.Fatal(listenInput())
+}
+
+func listenInput() error {
+	reader := bufio.NewReader(os.Stdin)
+
+	for {
+		line, _, err := reader.ReadLine()
+		if err != nil {
+			fmt.Println("yo")
+			return err
+		}
+
+		if string(line) == "debug" {
+			fmt.Printf("Total requests: %d\n", totalRequests)
+		}
+	}
 }
