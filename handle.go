@@ -9,6 +9,10 @@ import (
 	"time"
 )
 
+type urlpath string
+
+const urlpathDebug urlpath = "/debug"
+
 type paramkey string
 
 const (
@@ -21,7 +25,16 @@ var (
 	totalRequests = 0
 )
 
-func handle(w http.ResponseWriter, r *http.Request) {
+func handleMain(w http.ResponseWriter, r *http.Request) {
+	switch r.URL.Path {
+	case string(urlpathDebug):
+		handleDebug(w, r)
+	default:
+		handleRequest(w, r)
+	}
+}
+
+func handleRequest(w http.ResponseWriter, r *http.Request) {
 	incrementTotalRequests()
 
 	params := r.URL.Query()
@@ -45,6 +58,10 @@ func handle(w http.ResponseWriter, r *http.Request) {
 	if fibInt > 0 {
 		fibonacci(fibInt) //nolint
 	}
+}
+
+func handleDebug(w http.ResponseWriter, _ *http.Request) {
+	w.Write([]byte(strconv.Itoa(totalRequests)))
 }
 
 func readParamInt(params url.Values, key paramkey) (int, error) {

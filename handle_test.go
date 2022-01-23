@@ -10,7 +10,7 @@ import (
 	"github.com/drykit-go/testx/check"
 )
 
-func TestHandle(t *testing.T) {
+func TestHandleRequest(t *testing.T) {
 	t.Run("request with delay param", func(t *testing.T) {
 		const (
 			delay  = 100 * time.Millisecond
@@ -21,7 +21,7 @@ func TestHandle(t *testing.T) {
 
 		r := httptest.NewRequest("", fmt.Sprintf("/?delay=%dms", delay.Milliseconds()), nil)
 
-		testx.HTTPHandlerFunc(handle).WithRequest(r).
+		testx.HTTPHandlerFunc(handleRequest).WithRequest(r).
 			Response(checkStatusCode(200)).
 			Duration(check.Duration.InRange(expmin, expmax)).
 			Run(t)
@@ -36,7 +36,7 @@ func TestHandle(t *testing.T) {
 
 		r := httptest.NewRequest("", fmt.Sprintf("/?fib=%d", fib), nil)
 
-		testx.HTTPHandlerFunc(handle).WithRequest(r).
+		testx.HTTPHandlerFunc(handleRequest).WithRequest(r).
 			Response(checkStatusCode(200)).
 			Duration(check.Duration.InRange(expmin, expmax)).
 			Run(t)
@@ -45,7 +45,7 @@ func TestHandle(t *testing.T) {
 	t.Run("request without params", func(t *testing.T) {
 		const expmax = 3 * time.Millisecond
 
-		testx.HTTPHandlerFunc(handle).
+		testx.HTTPHandlerFunc(handleRequest).
 			Response(checkStatusCode(200)).
 			Duration(check.Duration.Under(expmax)).
 			Run(t)
@@ -56,7 +56,7 @@ func TestHandle(t *testing.T) {
 
 		r := httptest.NewRequest("", "/?delay=hey&fib=100", nil)
 
-		testx.HTTPHandlerFunc(handle).WithRequest(r).
+		testx.HTTPHandlerFunc(handleRequest).WithRequest(r).
 			Response(checkStatusCode(400)).
 			Duration(check.Duration.Under(expmax)).
 			Run(t)

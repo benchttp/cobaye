@@ -17,7 +17,7 @@ func main() {
 	flag.Parse()
 
 	addr := ":" + *port
-	handler := http.HandlerFunc(handle)
+	handler := http.HandlerFunc(handleMain)
 
 	fmt.Printf("http://localhost:%s\n", *port)
 	go func() {
