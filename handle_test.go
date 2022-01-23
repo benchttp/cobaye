@@ -3,6 +3,7 @@ package main //nolint:testpackage
 import (
 	"fmt"
 	"net/http/httptest"
+	"strconv"
 	"testing"
 	"time"
 
@@ -65,6 +66,43 @@ func TestHandleRequest(t *testing.T) {
 	})
 }
 
+func TestHandleDebug(t *testing.T) {
+	t.Run("initialized with 0 request", func(t *testing.T) {
+		s := server{}
+		r := httptest.NewRequest("", "/debug", nil)
+		testx.HTTPHandlerFunc(s.handleDebug).WithRequest(r).
+			Response(
+				checkStatusCode(200),
+				checkExactBody([]byte("0")),
+			).
+			Run(t)
+	})
+
+	t.Run("count requests", func(t *testing.T) {
+		const expRequests = 42
+		s := server{}
+		regularRequest := httptest.NewRequest("", "/", nil)
+
+		for i := 0; i < expRequests; i++ {
+			s.handleRequest(nil, regularRequest)
+		}
+
+		debugRequest := httptest.NewRequest("", "/debug", nil)
+		testx.HTTPHandlerFunc(s.handleDebug).WithRequest(debugRequest).
+			Response(
+				checkStatusCode(200),
+				checkExactBody([]byte(strconv.Itoa(expRequests))),
+			).
+			Run(t)
+	})
+}
+
+// helpers
+
 func checkStatusCode(code int) check.HTTPResponseChecker {
 	return check.HTTPResponse.StatusCode(check.Int.Is(code))
+}
+
+func checkExactBody(value []byte) check.HTTPResponseChecker {
+	return check.HTTPResponse.Body(check.Bytes.Is(value))
 }
