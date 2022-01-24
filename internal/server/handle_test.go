@@ -1,4 +1,4 @@
-package server //nolint:testpackage
+package server_test
 
 import (
 	"fmt"
@@ -9,10 +9,12 @@ import (
 
 	"github.com/drykit-go/testx"
 	"github.com/drykit-go/testx/check"
+
+	"github.com/benchttp/cobaye/internal/server"
 )
 
 func TestHandleRequest(t *testing.T) {
-	s := Server{}
+	s := &server.Server{}
 
 	t.Run("request with delay param", func(t *testing.T) {
 		const (
@@ -24,7 +26,7 @@ func TestHandleRequest(t *testing.T) {
 
 		r := httptest.NewRequest("", fmt.Sprintf("/?delay=%dms", delay.Milliseconds()), nil)
 
-		testx.HTTPHandlerFunc(s.handleRequest).WithRequest(r).
+		testx.HTTPHandler(s).WithRequest(r).
 			Response(checkStatusCode(200)).
 			Duration(check.Duration.InRange(expmin, expmax)).
 			Run(t)
@@ -39,7 +41,7 @@ func TestHandleRequest(t *testing.T) {
 
 		r := httptest.NewRequest("", fmt.Sprintf("/?fib=%d", fib), nil)
 
-		testx.HTTPHandlerFunc(s.handleRequest).WithRequest(r).
+		testx.HTTPHandler(s).WithRequest(r).
 			Response(checkStatusCode(200)).
 			Duration(check.Duration.InRange(expmin, expmax)).
 			Run(t)
@@ -48,7 +50,7 @@ func TestHandleRequest(t *testing.T) {
 	t.Run("request without params", func(t *testing.T) {
 		const expmax = 3 * time.Millisecond
 
-		testx.HTTPHandlerFunc(s.handleRequest).
+		testx.HTTPHandler(s).
 			Response(checkStatusCode(200)).
 			Duration(check.Duration.Under(expmax)).
 			Run(t)
@@ -59,7 +61,7 @@ func TestHandleRequest(t *testing.T) {
 
 		r := httptest.NewRequest("", "/?delay=hey&fib=100", nil)
 
-		testx.HTTPHandlerFunc(s.handleRequest).WithRequest(r).
+		testx.HTTPHandler(s).WithRequest(r).
 			Response(checkStatusCode(400)).
 			Duration(check.Duration.Under(expmax)).
 			Run(t)
@@ -68,27 +70,30 @@ func TestHandleRequest(t *testing.T) {
 
 func TestHandleDebug(t *testing.T) {
 	t.Run("initialized with 0 request", func(t *testing.T) {
-		s := Server{}
+		const expRequests = 0
+
+		s := &server.Server{}
 		r := httptest.NewRequest("", "/debug", nil)
-		testx.HTTPHandlerFunc(s.handleDebug).WithRequest(r).
+		testx.HTTPHandler(s).WithRequest(r).
 			Response(
 				checkStatusCode(200),
-				checkExactBody([]byte("0")),
+				checkExactBody([]byte([]byte(strconv.Itoa(expRequests)))),
 			).
 			Run(t)
 	})
 
 	t.Run("count requests", func(t *testing.T) {
 		const expRequests = 42
-		s := Server{}
+
+		s := &server.Server{}
 		regularRequest := httptest.NewRequest("", "/", nil)
 
 		for i := 0; i < expRequests; i++ {
-			s.handleRequest(nil, regularRequest)
+			s.ServeHTTP(nil, regularRequest)
 		}
 
 		debugRequest := httptest.NewRequest("", "/debug", nil)
-		testx.HTTPHandlerFunc(s.handleDebug).WithRequest(debugRequest).
+		testx.HTTPHandler(s).WithRequest(debugRequest).
 			Response(
 				checkStatusCode(200),
 				checkExactBody([]byte(strconv.Itoa(expRequests))),

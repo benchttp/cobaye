@@ -3,33 +3,52 @@ package server
 import (
 	"bufio"
 	"fmt"
+	"net/http"
 	"os"
-	"sync"
+	"sync/atomic"
 )
 
 type Server struct {
-	mu            sync.Mutex
-	totalRequests int
+	port string
+
+	requestCount int64
 }
 
-func (s *Server) ListenInput() error {
+func New(port string) *Server {
+	return &Server{port: port}
+}
+
+func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	switch r.URL.Path {
+	case string(urlpathDebug):
+		s.handleDebug(w, r)
+	default:
+		s.handleRequest(w, r)
+	}
+}
+
+func (s *Server) ListenAndServe() error {
+	addr := "localhost:" + s.port
+	fmt.Printf("http://%s\n", addr)
+	go s.listenStdin()
+	return http.ListenAndServe(addr, s)
+}
+
+func (s *Server) listenStdin() {
 	reader := bufio.NewReader(os.Stdin)
 
 	for {
 		line, _, err := reader.ReadLine()
 		if err != nil {
-			fmt.Println("yo")
-			return err
+			fmt.Println(err) // non critical
 		}
 
 		if string(line) == "debug" {
-			fmt.Printf("Total requests: %d\n", s.totalRequests)
+			fmt.Printf("Total requests: %d\n", s.requestCount)
 		}
 	}
 }
 
-func (s *Server) incrementTotalRequests() {
-	s.mu.Lock()
-	s.totalRequests++
-	s.mu.Unlock()
+func (s *Server) incrementRequestCount() {
+	atomic.AddInt64(&s.requestCount, 1)
 }

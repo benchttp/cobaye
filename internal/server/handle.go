@@ -19,17 +19,8 @@ const (
 	paramkeyFib   paramkey = "fib"
 )
 
-func (s *Server) HandleMain(w http.ResponseWriter, r *http.Request) {
-	switch r.URL.Path {
-	case string(urlpathDebug):
-		s.handleDebug(w, r)
-	default:
-		s.handleRequest(w, r)
-	}
-}
-
 func (s *Server) handleRequest(w http.ResponseWriter, r *http.Request) {
-	s.incrementTotalRequests()
+	s.incrementRequestCount()
 
 	params := r.URL.Query()
 
@@ -55,7 +46,7 @@ func (s *Server) handleRequest(w http.ResponseWriter, r *http.Request) {
 }
 
 func (s *Server) handleDebug(w http.ResponseWriter, _ *http.Request) {
-	w.Write([]byte(strconv.Itoa(s.totalRequests)))
+	w.Write([]byte(strconv.Itoa(int(s.requestCount))))
 }
 
 // helpers
