@@ -1,4 +1,4 @@
-package main
+package server
 
 import (
 	"fmt"
@@ -19,7 +19,7 @@ const (
 	paramkeyFib   paramkey = "fib"
 )
 
-func (s *server) handleMain(w http.ResponseWriter, r *http.Request) {
+func (s *Server) HandleMain(w http.ResponseWriter, r *http.Request) {
 	switch r.URL.Path {
 	case string(urlpathDebug):
 		s.handleDebug(w, r)
@@ -28,7 +28,7 @@ func (s *server) handleMain(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func (s *server) handleRequest(w http.ResponseWriter, r *http.Request) {
+func (s *Server) handleRequest(w http.ResponseWriter, r *http.Request) {
 	s.incrementTotalRequests()
 
 	params := r.URL.Query()
@@ -54,7 +54,7 @@ func (s *server) handleRequest(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func (s *server) handleDebug(w http.ResponseWriter, _ *http.Request) {
+func (s *Server) handleDebug(w http.ResponseWriter, _ *http.Request) {
 	w.Write([]byte(strconv.Itoa(s.totalRequests)))
 }
 

@@ -1,4 +1,4 @@
-package main
+package server
 
 import (
 	"bufio"
@@ -7,12 +7,12 @@ import (
 	"sync"
 )
 
-type server struct {
+type Server struct {
 	mu            sync.Mutex
 	totalRequests int
 }
 
-func (s *server) listenInput() error {
+func (s *Server) ListenInput() error {
 	reader := bufio.NewReader(os.Stdin)
 
 	for {
@@ -28,7 +28,7 @@ func (s *server) listenInput() error {
 	}
 }
 
-func (s *server) incrementTotalRequests() {
+func (s *Server) incrementTotalRequests() {
 	s.mu.Lock()
 	s.totalRequests++
 	s.mu.Unlock()

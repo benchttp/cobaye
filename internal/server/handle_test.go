@@ -1,4 +1,4 @@
-package main //nolint:testpackage
+package server //nolint:testpackage
 
 import (
 	"fmt"
@@ -12,7 +12,7 @@ import (
 )
 
 func TestHandleRequest(t *testing.T) {
-	s := server{}
+	s := Server{}
 
 	t.Run("request with delay param", func(t *testing.T) {
 		const (
@@ -68,7 +68,7 @@ func TestHandleRequest(t *testing.T) {
 
 func TestHandleDebug(t *testing.T) {
 	t.Run("initialized with 0 request", func(t *testing.T) {
-		s := server{}
+		s := Server{}
 		r := httptest.NewRequest("", "/debug", nil)
 		testx.HTTPHandlerFunc(s.handleDebug).WithRequest(r).
 			Response(
@@ -80,7 +80,7 @@ func TestHandleDebug(t *testing.T) {
 
 	t.Run("count requests", func(t *testing.T) {
 		const expRequests = 42
-		s := server{}
+		s := Server{}
 		regularRequest := httptest.NewRequest("", "/", nil)
 
 		for i := 0; i < expRequests; i++ {

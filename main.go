@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+
+	"github.com/benchttp/cobaye/internal/server"
 )
 
 const defaultPort = "9999"
@@ -15,13 +17,13 @@ func main() {
 	flag.Parse()
 
 	addr := ":" + *port
-	server := server{}
-	handler := http.HandlerFunc(server.handleMain)
+	s := server.Server{}
+	handler := http.HandlerFunc(s.HandleMain)
 
 	fmt.Printf("http://localhost%s\n", addr)
 	go func() {
 		log.Fatal(http.ListenAndServe(addr, handler))
 	}()
 
-	log.Fatal(server.listenInput())
+	log.Fatal(s.ListenInput())
 }

@@ -1,4 +1,4 @@
-package main
+package server
 
 func fibonacci(n int) int {
 	if n < 2 {
