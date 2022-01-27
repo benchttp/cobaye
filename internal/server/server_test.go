@@ -1,16 +1,21 @@
-package main //nolint:testpackage
+package server_test
 
 import (
 	"fmt"
 	"net/http/httptest"
+	"strconv"
 	"testing"
 	"time"
 
 	"github.com/drykit-go/testx"
 	"github.com/drykit-go/testx/check"
+
+	"github.com/benchttp/cobaye/internal/server"
 )
 
-func TestHandle(t *testing.T) {
+func TestHandleRequest(t *testing.T) {
+	s := &server.Server{}
+
 	t.Run("request with delay param", func(t *testing.T) {
 		const (
 			delay  = 100 * time.Millisecond
@@ -21,7 +26,7 @@ func TestHandle(t *testing.T) {
 
 		r := httptest.NewRequest("", fmt.Sprintf("/?delay=%dms", delay.Milliseconds()), nil)
 
-		testx.HTTPHandlerFunc(handle).WithRequest(r).
+		testx.HTTPHandler(s).WithRequest(r).
 			Response(checkStatusCode(200)).
 			Duration(check.Duration.InRange(expmin, expmax)).
 			Run(t)
@@ -36,7 +41,7 @@ func TestHandle(t *testing.T) {
 
 		r := httptest.NewRequest("", fmt.Sprintf("/?fib=%d", fib), nil)
 
-		testx.HTTPHandlerFunc(handle).WithRequest(r).
+		testx.HTTPHandler(s).WithRequest(r).
 			Response(checkStatusCode(200)).
 			Duration(check.Duration.InRange(expmin, expmax)).
 			Run(t)
@@ -45,7 +50,7 @@ func TestHandle(t *testing.T) {
 	t.Run("request without params", func(t *testing.T) {
 		const expmax = 3 * time.Millisecond
 
-		testx.HTTPHandlerFunc(handle).
+		testx.HTTPHandler(s).
 			Response(checkStatusCode(200)).
 			Duration(check.Duration.Under(expmax)).
 			Run(t)
@@ -56,13 +61,53 @@ func TestHandle(t *testing.T) {
 
 		r := httptest.NewRequest("", "/?delay=hey&fib=100", nil)
 
-		testx.HTTPHandlerFunc(handle).WithRequest(r).
+		testx.HTTPHandler(s).WithRequest(r).
 			Response(checkStatusCode(400)).
 			Duration(check.Duration.Under(expmax)).
 			Run(t)
 	})
 }
 
+func TestHandleDebug(t *testing.T) {
+	t.Run("initialized with 0 request", func(t *testing.T) {
+		const expRequests = 0
+
+		s := &server.Server{}
+		r := httptest.NewRequest("", "/debug", nil)
+		testx.HTTPHandler(s).WithRequest(r).
+			Response(
+				checkStatusCode(200),
+				checkExactBody([]byte([]byte(strconv.Itoa(expRequests)))),
+			).
+			Run(t)
+	})
+
+	t.Run("count requests", func(t *testing.T) {
+		const expRequests = 42
+
+		s := &server.Server{}
+		regularRequest := httptest.NewRequest("", "/", nil)
+
+		for i := 0; i < expRequests; i++ {
+			s.ServeHTTP(nil, regularRequest)
+		}
+
+		debugRequest := httptest.NewRequest("", "/debug", nil)
+		testx.HTTPHandler(s).WithRequest(debugRequest).
+			Response(
+				checkStatusCode(200),
+				checkExactBody([]byte(strconv.Itoa(expRequests))),
+			).
+			Run(t)
+	})
+}
+
+// helpers
+
 func checkStatusCode(code int) check.HTTPResponseChecker {
 	return check.HTTPResponse.StatusCode(check.Int.Is(code))
+}
+
+func checkExactBody(value []byte) check.HTTPResponseChecker {
+	return check.HTTPResponse.Body(check.Bytes.Is(value))
 }

@@ -1,4 +1,4 @@
-package main
+package server
 
 import (
 	"fmt"
@@ -8,6 +8,10 @@ import (
 	"time"
 )
 
+type urlpath string
+
+const urlpathDebug urlpath = "/debug"
+
 type paramkey string
 
 const (
@@ -15,7 +19,9 @@ const (
 	paramkeyFib   paramkey = "fib"
 )
 
-func handle(w http.ResponseWriter, r *http.Request) {
+func (s *Server) handleRequest(w http.ResponseWriter, r *http.Request) {
+	s.incrementRequestCount()
+
 	params := r.URL.Query()
 
 	delay, err := readParamDuration(params, paramkeyDelay)
@@ -38,6 +44,12 @@ func handle(w http.ResponseWriter, r *http.Request) {
 		fibonacci(fibInt) //nolint
 	}
 }
+
+func (s *Server) handleDebug(w http.ResponseWriter, _ *http.Request) {
+	w.Write([]byte(strconv.Itoa(int(s.requestCount))))
+}
+
+// helpers
 
 func readParamInt(params url.Values, key paramkey) (int, error) {
 	raw := params.Get(string(key))
