@@ -19,12 +19,7 @@ func New(port string) *Server {
 }
 
 func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	switch r.URL.Path {
-	case string(urlpathDebug):
-		s.handleDebug(w, r)
-	default:
-		s.handleRequest(w, r)
-	}
+	s.handle(w, r)
 }
 
 func (s *Server) ListenAndServe() error {

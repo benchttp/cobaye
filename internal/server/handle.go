@@ -2,6 +2,7 @@ package server
 
 import (
 	"fmt"
+	"io"
 	"net/http"
 	"net/url"
 	"strconv"
@@ -10,7 +11,10 @@ import (
 
 type urlpath string
 
-const urlpathDebug urlpath = "/debug"
+const (
+	urlpathDebug    urlpath = "/debug"
+	urlpathIdentity urlpath = "/identity"
+)
 
 type paramkey string
 
@@ -18,6 +22,17 @@ const (
 	paramkeyDelay paramkey = "delay"
 	paramkeyFib   paramkey = "fib"
 )
+
+func (s *Server) handle(w http.ResponseWriter, r *http.Request) {
+	switch urlpath(r.URL.Path) {
+	case urlpathDebug:
+		s.handleDebug(w, r)
+	case urlpathIdentity:
+		s.handleIdentity(w, r)
+	default:
+		s.handleRequest(w, r)
+	}
+}
 
 func (s *Server) handleRequest(w http.ResponseWriter, r *http.Request) {
 	s.incrementRequestCount()
@@ -41,8 +56,24 @@ func (s *Server) handleRequest(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if fibInt > 0 {
-		fibonacci(fibInt) //nolint
+		_ = fibonacci(fibInt)
 	}
+}
+
+func (s *Server) handleIdentity(w http.ResponseWriter, r *http.Request) {
+	for key, vals := range r.Header {
+		for _, val := range vals {
+			w.Header().Add(key, val)
+		}
+	}
+
+	b, err := io.ReadAll(r.Body)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	w.Write(b)
 }
 
 func (s *Server) handleDebug(w http.ResponseWriter, _ *http.Request) {
