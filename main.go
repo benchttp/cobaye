@@ -14,5 +14,8 @@ var port = flag.String("port", defaultPort, "listening port")
 func main() {
 	flag.Parse()
 	s := server.New(*port)
+
+	go s.ListenStdin()
+
 	log.Fatal(s.ListenAndServe())
 }

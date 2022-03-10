@@ -1,11 +1,8 @@
 package server
 
 import (
-	"bufio"
 	"fmt"
 	"net/http"
-	"os"
-	"sync/atomic"
 )
 
 type Server struct {
@@ -14,36 +11,34 @@ type Server struct {
 	requestCount int64
 }
 
+type urlpath string
+
+const (
+	urlpathDebug    urlpath = "/debug"
+	urlpathIdentity urlpath = "/identity"
+	urlpathMocks    urlpath = "/report"
+)
+
 func New(port string) *Server {
 	return &Server{port: port}
 }
 
 func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	s.handle(w, r)
+	switch urlpath(r.URL.Path) {
+	case urlpathDebug:
+		s.handleDebug(w, r)
+	case urlpathIdentity:
+		s.handleIdentity(w, r)
+	case urlpathMocks:
+		s.handleMocks(w, r)
+	default:
+		s.handleFibonacci(w, r)
+	}
 }
 
 func (s *Server) ListenAndServe() error {
 	addr := "localhost:" + s.port
 	fmt.Printf("http://%s\n", addr)
-	go s.listenStdin()
+
 	return http.ListenAndServe(addr, s)
-}
-
-func (s *Server) listenStdin() {
-	reader := bufio.NewReader(os.Stdin)
-
-	for {
-		line, _, err := reader.ReadLine()
-		if err != nil {
-			fmt.Println(err) // non critical
-		}
-
-		if string(line) == "debug" {
-			fmt.Printf("Total requests: %d\n", s.requestCount)
-		}
-	}
-}
-
-func (s *Server) incrementRequestCount() {
-	atomic.AddInt64(&s.requestCount, 1)
 }
