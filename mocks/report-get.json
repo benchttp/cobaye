@@ -1,0 +1,3238 @@
+{
+  "benchmark": {
+    "records": [
+      {
+        "time": 155343827,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1625405
+          },
+          {
+            "name": "ConnectDone",
+            "time": 20488640
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 20682124
+          },
+          {
+            "name": "WroteRequest",
+            "time": 20682631
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 155009018
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 155164781
+          },
+          {
+            "name": "BodyRead",
+            "time": 155343827
+          }
+        ]
+      },
+      {
+        "time": 265384707,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1685320
+          },
+          {
+            "name": "ConnectDone",
+            "time": 20446213
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 20518800
+          },
+          {
+            "name": "WroteRequest",
+            "time": 20519746
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 265232769
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 265311595
+          },
+          {
+            "name": "BodyRead",
+            "time": 265384707
+          }
+        ]
+      },
+      {
+        "time": 265030792,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 980723
+          },
+          {
+            "name": "ConnectDone",
+            "time": 20037137
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 20218678
+          },
+          {
+            "name": "WroteRequest",
+            "time": 20219085
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 264585242
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 264694247
+          },
+          {
+            "name": "BodyRead",
+            "time": 265030792
+          }
+        ]
+      },
+      {
+        "time": 265462649,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1307535
+          },
+          {
+            "name": "ConnectDone",
+            "time": 19883470
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 19940357
+          },
+          {
+            "name": "WroteRequest",
+            "time": 19943163
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 264909083
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 265225228
+          },
+          {
+            "name": "BodyRead",
+            "time": 265462649
+          }
+        ]
+      },
+      {
+        "time": 265689074,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1269010
+          },
+          {
+            "name": "ConnectDone",
+            "time": 20284417
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 20470463
+          },
+          {
+            "name": "WroteRequest",
+            "time": 20470847
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 264818433
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 265081914
+          },
+          {
+            "name": "BodyRead",
+            "time": 265689074
+          }
+        ]
+      },
+      {
+        "time": 265552743,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 938485
+          },
+          {
+            "name": "ConnectDone",
+            "time": 19714109
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 19803534
+          },
+          {
+            "name": "WroteRequest",
+            "time": 19806438
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 264899770
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 265229168
+          },
+          {
+            "name": "BodyRead",
+            "time": 265552743
+          }
+        ]
+      },
+      {
+        "time": 265777835,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1134829
+          },
+          {
+            "name": "ConnectDone",
+            "time": 20222097
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 20428668
+          },
+          {
+            "name": "WroteRequest",
+            "time": 20429642
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 265521722
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 265605803
+          },
+          {
+            "name": "BodyRead",
+            "time": 265777835
+          }
+        ]
+      },
+      {
+        "time": 265466097,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 688265
+          },
+          {
+            "name": "ConnectDone",
+            "time": 19948219
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 20121868
+          },
+          {
+            "name": "WroteRequest",
+            "time": 20122351
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 265210927
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 265258486
+          },
+          {
+            "name": "BodyRead",
+            "time": 265466097
+          }
+        ]
+      },
+      {
+        "time": 380200694,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1080362
+          },
+          {
+            "name": "ConnectDone",
+            "time": 19993717
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 20183873
+          },
+          {
+            "name": "WroteRequest",
+            "time": 20184266
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 380041211
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 380134853
+          },
+          {
+            "name": "BodyRead",
+            "time": 380200694
+          }
+        ]
+      },
+      {
+        "time": 380639249,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1225677
+          },
+          {
+            "name": "ConnectDone",
+            "time": 20465844
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 20643172
+          },
+          {
+            "name": "WroteRequest",
+            "time": 20643538
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 380430029
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 380510735
+          },
+          {
+            "name": "BodyRead",
+            "time": 380639249
+          }
+        ]
+      },
+      {
+        "time": 172343630,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 51702
+          },
+          {
+            "name": "WroteRequest",
+            "time": 57132
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 171438425
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 171972689
+          },
+          {
+            "name": "BodyRead",
+            "time": 172343630
+          }
+        ]
+      },
+      {
+        "time": 174418329,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2469259
+          },
+          {
+            "name": "ConnectDone",
+            "time": 27138628
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 27566062
+          },
+          {
+            "name": "WroteRequest",
+            "time": 27569468
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 174259853
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 174338723
+          },
+          {
+            "name": "BodyRead",
+            "time": 174418329
+          }
+        ]
+      },
+      {
+        "time": 174574580,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 84101
+          },
+          {
+            "name": "WroteRequest",
+            "time": 90084
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 174308039
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 174417134
+          },
+          {
+            "name": "BodyRead",
+            "time": 174574580
+          }
+        ]
+      },
+      {
+        "time": 174346399,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2160789
+          },
+          {
+            "name": "ConnectDone",
+            "time": 26657491
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 27101803
+          },
+          {
+            "name": "WroteRequest",
+            "time": 27104797
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 173880938
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 173929822
+          },
+          {
+            "name": "BodyRead",
+            "time": 174346399
+          }
+        ]
+      },
+      {
+        "time": 174860548,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2851192
+          },
+          {
+            "name": "ConnectDone",
+            "time": 26953928
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 27170428
+          },
+          {
+            "name": "WroteRequest",
+            "time": 27176257
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 174156174
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 174715053
+          },
+          {
+            "name": "BodyRead",
+            "time": 174860548
+          }
+        ]
+      },
+      {
+        "time": 174763367,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2234244
+          },
+          {
+            "name": "ConnectDone",
+            "time": 17222355
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 17322232
+          },
+          {
+            "name": "WroteRequest",
+            "time": 17325125
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 174045825
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 174134899
+          },
+          {
+            "name": "BodyRead",
+            "time": 174763367
+          }
+        ]
+      },
+      {
+        "time": 174737615,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2015094
+          },
+          {
+            "name": "ConnectDone",
+            "time": 17063240
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 17167931
+          },
+          {
+            "name": "WroteRequest",
+            "time": 17172482
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 174302421
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 174460613
+          },
+          {
+            "name": "BodyRead",
+            "time": 174737615
+          }
+        ]
+      },
+      {
+        "time": 175311402,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 72423
+          },
+          {
+            "name": "WroteRequest",
+            "time": 76011
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 174929165
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 174980905
+          },
+          {
+            "name": "BodyRead",
+            "time": 175311402
+          }
+        ]
+      },
+      {
+        "time": 162140232,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1883175
+          },
+          {
+            "name": "ConnectDone",
+            "time": 17630417
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 17805039
+          },
+          {
+            "name": "WroteRequest",
+            "time": 17809689
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 161878948
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 161989824
+          },
+          {
+            "name": "BodyRead",
+            "time": 162140232
+          }
+        ]
+      },
+      {
+        "time": 169134516,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2350813
+          },
+          {
+            "name": "ConnectDone",
+            "time": 26963675
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 27128140
+          },
+          {
+            "name": "WroteRequest",
+            "time": 27131392
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 168923863
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 168990738
+          },
+          {
+            "name": "BodyRead",
+            "time": 169134516
+          }
+        ]
+      },
+      {
+        "time": 169176452,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 98803
+          },
+          {
+            "name": "WroteRequest",
+            "time": 103102
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 168812160
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 169002100
+          },
+          {
+            "name": "BodyRead",
+            "time": 169176452
+          }
+        ]
+      },
+      {
+        "time": 275969588,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 72000
+          },
+          {
+            "name": "WroteRequest",
+            "time": 76651
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 275524209
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 275602033
+          },
+          {
+            "name": "BodyRead",
+            "time": 275969588
+          }
+        ]
+      },
+      {
+        "time": 275962292,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 53519
+          },
+          {
+            "name": "WroteRequest",
+            "time": 58182
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 275558570
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 275742769
+          },
+          {
+            "name": "BodyRead",
+            "time": 275962292
+          }
+        ]
+      },
+      {
+        "time": 169539387,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 71197
+          },
+          {
+            "name": "WroteRequest",
+            "time": 78847
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 169277484
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 169322712
+          },
+          {
+            "name": "BodyRead",
+            "time": 169539387
+          }
+        ]
+      },
+      {
+        "time": 169117414,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1768733
+          },
+          {
+            "name": "ConnectDone",
+            "time": 17240888
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 17387521
+          },
+          {
+            "name": "WroteRequest",
+            "time": 17393636
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 168861083
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 168910330
+          },
+          {
+            "name": "BodyRead",
+            "time": 169117414
+          }
+        ]
+      },
+      {
+        "time": 169682427,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2353452
+          },
+          {
+            "name": "ConnectDone",
+            "time": 17825834
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 18034772
+          },
+          {
+            "name": "WroteRequest",
+            "time": 18038101
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 169429643
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 169459414
+          },
+          {
+            "name": "BodyRead",
+            "time": 169682427
+          }
+        ]
+      },
+      {
+        "time": 169472513,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2180292
+          },
+          {
+            "name": "ConnectDone",
+            "time": 26617488
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 27022028
+          },
+          {
+            "name": "WroteRequest",
+            "time": 27024369
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 169250793
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 169298677
+          },
+          {
+            "name": "BodyRead",
+            "time": 169472513
+          }
+        ]
+      },
+      {
+        "time": 403221749,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2147078
+          },
+          {
+            "name": "ConnectDone",
+            "time": 26446964
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 26601658
+          },
+          {
+            "name": "WroteRequest",
+            "time": 26606383
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 402941391
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 403021714
+          },
+          {
+            "name": "BodyRead",
+            "time": 403221749
+          }
+        ]
+      },
+      {
+        "time": 294082434,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 168334
+          },
+          {
+            "name": "WroteRequest",
+            "time": 173004
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 293766298
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 293861336
+          },
+          {
+            "name": "BodyRead",
+            "time": 294082434
+          }
+        ]
+      },
+      {
+        "time": 179949346,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 79128
+          },
+          {
+            "name": "WroteRequest",
+            "time": 83968
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 179576114
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 179664486
+          },
+          {
+            "name": "BodyRead",
+            "time": 179949346
+          }
+        ]
+      },
+      {
+        "time": 250650157,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2009504
+          },
+          {
+            "name": "ConnectDone",
+            "time": 23971823
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 24142418
+          },
+          {
+            "name": "WroteRequest",
+            "time": 24145740
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 250487956
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 250602326
+          },
+          {
+            "name": "BodyRead",
+            "time": 250650157
+          }
+        ]
+      },
+      {
+        "time": 251169209,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 191175
+          },
+          {
+            "name": "WroteRequest",
+            "time": 194205
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 250974518
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 251084199
+          },
+          {
+            "name": "BodyRead",
+            "time": 251169209
+          }
+        ]
+      },
+      {
+        "time": 251236195,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2108107
+          },
+          {
+            "name": "ConnectDone",
+            "time": 17892750
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 18138264
+          },
+          {
+            "name": "WroteRequest",
+            "time": 18141090
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 250883631
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 250987603
+          },
+          {
+            "name": "BodyRead",
+            "time": 251236195
+          }
+        ]
+      },
+      {
+        "time": 251099593,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1752073
+          },
+          {
+            "name": "ConnectDone",
+            "time": 24008718
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 24140618
+          },
+          {
+            "name": "WroteRequest",
+            "time": 24143893
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 250618529
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 250736326
+          },
+          {
+            "name": "BodyRead",
+            "time": 251099593
+          }
+        ]
+      },
+      {
+        "time": 251773941,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2145191
+          },
+          {
+            "name": "ConnectDone",
+            "time": 24313346
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 24508824
+          },
+          {
+            "name": "WroteRequest",
+            "time": 24513444
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 251265846
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 251612573
+          },
+          {
+            "name": "BodyRead",
+            "time": 251773941
+          }
+        ]
+      },
+      {
+        "time": 251704188,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2312281
+          },
+          {
+            "name": "ConnectDone",
+            "time": 17819432
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 18013112
+          },
+          {
+            "name": "WroteRequest",
+            "time": 18017359
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 251300938
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 251415996
+          },
+          {
+            "name": "BodyRead",
+            "time": 251704188
+          }
+        ]
+      },
+      {
+        "time": 135286281,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 81799
+          },
+          {
+            "name": "WroteRequest",
+            "time": 86858
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 134963577
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 135067243
+          },
+          {
+            "name": "BodyRead",
+            "time": 135286281
+          }
+        ]
+      },
+      {
+        "time": 181076847,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1761198
+          },
+          {
+            "name": "ConnectDone",
+            "time": 18032195
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 18249111
+          },
+          {
+            "name": "WroteRequest",
+            "time": 18253786
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 180899758
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 180974572
+          },
+          {
+            "name": "BodyRead",
+            "time": 181076847
+          }
+        ]
+      },
+      {
+        "time": 301997697,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2151554
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 19759388
+          },
+          {
+            "name": "WroteRequest",
+            "time": 19764422
+          },
+          {
+            "name": "ConnectDone",
+            "time": 27214467
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 301770135
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 301908663
+          },
+          {
+            "name": "BodyRead",
+            "time": 301997697
+          }
+        ]
+      },
+      {
+        "time": 229411358,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2056887
+          },
+          {
+            "name": "ConnectDone",
+            "time": 18139292
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 18287470
+          },
+          {
+            "name": "WroteRequest",
+            "time": 18292703
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 229205937
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 229310889
+          },
+          {
+            "name": "BodyRead",
+            "time": 229411358
+          }
+        ]
+      },
+      {
+        "time": 229614608,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2006417
+          },
+          {
+            "name": "ConnectDone",
+            "time": 18123056
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 18509351
+          },
+          {
+            "name": "WroteRequest",
+            "time": 18513150
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 229209194
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 229257796
+          },
+          {
+            "name": "BodyRead",
+            "time": 229614608
+          }
+        ]
+      },
+      {
+        "time": 302630092,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 62703
+          },
+          {
+            "name": "WroteRequest",
+            "time": 67711
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 301915180
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 302086735
+          },
+          {
+            "name": "BodyRead",
+            "time": 302630092
+          }
+        ]
+      },
+      {
+        "time": 229871615,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 76535
+          },
+          {
+            "name": "WroteRequest",
+            "time": 81793
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 229509749
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 229594333
+          },
+          {
+            "name": "BodyRead",
+            "time": 229871615
+          }
+        ]
+      },
+      {
+        "time": 229864178,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 57553
+          },
+          {
+            "name": "WroteRequest",
+            "time": 60769
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 229648435
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 229726778
+          },
+          {
+            "name": "BodyRead",
+            "time": 229864178
+          }
+        ]
+      },
+      {
+        "time": 229711698,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1927010
+          },
+          {
+            "name": "ConnectDone",
+            "time": 17933885
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 18169729
+          },
+          {
+            "name": "WroteRequest",
+            "time": 18174906
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 229232430
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 229299527
+          },
+          {
+            "name": "BodyRead",
+            "time": 229711698
+          }
+        ]
+      },
+      {
+        "time": 534570472,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2154580
+          },
+          {
+            "name": "ConnectDone",
+            "time": 24351716
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 24665987
+          },
+          {
+            "name": "WroteRequest",
+            "time": 24669378
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 534281597
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 534357944
+          },
+          {
+            "name": "BodyRead",
+            "time": 534570472
+          }
+        ]
+      },
+      {
+        "time": 225080330,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 80386
+          },
+          {
+            "name": "WroteRequest",
+            "time": 86462
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 224694181
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 224866538
+          },
+          {
+            "name": "BodyRead",
+            "time": 225080330
+          }
+        ]
+      },
+      {
+        "time": 197539405,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 67753
+          },
+          {
+            "name": "WroteRequest",
+            "time": 72760
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 197337797
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 197432377
+          },
+          {
+            "name": "BodyRead",
+            "time": 197539405
+          }
+        ]
+      },
+      {
+        "time": 257722886,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2418083
+          },
+          {
+            "name": "ConnectDone",
+            "time": 27106890
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 29542141
+          },
+          {
+            "name": "WroteRequest",
+            "time": 29547800
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 257403449
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 257522355
+          },
+          {
+            "name": "BodyRead",
+            "time": 257722886
+          }
+        ]
+      },
+      {
+        "time": 257792125,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 117607
+          },
+          {
+            "name": "WroteRequest",
+            "time": 122212
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 257620374
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 257714003
+          },
+          {
+            "name": "BodyRead",
+            "time": 257792125
+          }
+        ]
+      },
+      {
+        "time": 257764788,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2158465
+          },
+          {
+            "name": "ConnectDone",
+            "time": 27138417
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 29723870
+          },
+          {
+            "name": "WroteRequest",
+            "time": 29727068
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 257433593
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 257550993
+          },
+          {
+            "name": "BodyRead",
+            "time": 257764788
+          }
+        ]
+      },
+      {
+        "time": 257900773,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1742512
+          },
+          {
+            "name": "ConnectDone",
+            "time": 27154236
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 29536714
+          },
+          {
+            "name": "WroteRequest",
+            "time": 29538534
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 257560138
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 257640367
+          },
+          {
+            "name": "BodyRead",
+            "time": 257900773
+          }
+        ]
+      },
+      {
+        "time": 147580833,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 49105
+          },
+          {
+            "name": "WroteRequest",
+            "time": 53561
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 147177422
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 147214161
+          },
+          {
+            "name": "BodyRead",
+            "time": 147580833
+          }
+        ]
+      },
+      {
+        "time": 258291955,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2227828
+          },
+          {
+            "name": "ConnectDone",
+            "time": 27319511
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 29766226
+          },
+          {
+            "name": "WroteRequest",
+            "time": 29768931
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 257597998
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 257742309
+          },
+          {
+            "name": "BodyRead",
+            "time": 258291955
+          }
+        ]
+      },
+      {
+        "time": 258080611,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1902472
+          },
+          {
+            "name": "ConnectDone",
+            "time": 27232855
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 29674081
+          },
+          {
+            "name": "WroteRequest",
+            "time": 29675570
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 257762761
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 257837429
+          },
+          {
+            "name": "BodyRead",
+            "time": 258080611
+          }
+        ]
+      },
+      {
+        "time": 167110149,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 209308
+          },
+          {
+            "name": "WroteRequest",
+            "time": 216636
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 166824524
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 167000186
+          },
+          {
+            "name": "BodyRead",
+            "time": 167110149
+          }
+        ]
+      },
+      {
+        "time": 366931673,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2027584
+          },
+          {
+            "name": "ConnectDone",
+            "time": 27104539
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 29854871
+          },
+          {
+            "name": "WroteRequest",
+            "time": 29859303
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 366569726
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 366718937
+          },
+          {
+            "name": "BodyRead",
+            "time": 366931673
+          }
+        ]
+      },
+      {
+        "time": 375743812,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2324448
+          },
+          {
+            "name": "ConnectDone",
+            "time": 27240236
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 29939480
+          },
+          {
+            "name": "WroteRequest",
+            "time": 29940694
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 375522372
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 375658999
+          },
+          {
+            "name": "BodyRead",
+            "time": 375743812
+          }
+        ]
+      },
+      {
+        "time": 178276031,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1937178
+          },
+          {
+            "name": "ConnectDone",
+            "time": 27835090
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 27969170
+          },
+          {
+            "name": "WroteRequest",
+            "time": 27974050
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 178120395
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 178207652
+          },
+          {
+            "name": "BodyRead",
+            "time": 178276031
+          }
+        ]
+      },
+      {
+        "time": 178324753,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1773768
+          },
+          {
+            "name": "ConnectDone",
+            "time": 17351419
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 17541894
+          },
+          {
+            "name": "WroteRequest",
+            "time": 17548403
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 178006239
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 178069199
+          },
+          {
+            "name": "BodyRead",
+            "time": 178324753
+          }
+        ]
+      },
+      {
+        "time": 178675580,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1834175
+          },
+          {
+            "name": "ConnectDone",
+            "time": 17508253
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 17805691
+          },
+          {
+            "name": "WroteRequest",
+            "time": 17808420
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 178162128
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 178211958
+          },
+          {
+            "name": "BodyRead",
+            "time": 178675580
+          }
+        ]
+      },
+      {
+        "time": 178983332,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2151742
+          },
+          {
+            "name": "ConnectDone",
+            "time": 27898794
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 28097375
+          },
+          {
+            "name": "WroteRequest",
+            "time": 28100995
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 178064547
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 178195228
+          },
+          {
+            "name": "BodyRead",
+            "time": 178983332
+          }
+        ]
+      },
+      {
+        "time": 179204908,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 97755
+          },
+          {
+            "name": "WroteRequest",
+            "time": 100994
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 178560536
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 178681275
+          },
+          {
+            "name": "BodyRead",
+            "time": 179204908
+          }
+        ]
+      },
+      {
+        "time": 179382250,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 66303
+          },
+          {
+            "name": "WroteRequest",
+            "time": 71143
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 179008476
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 179119136
+          },
+          {
+            "name": "BodyRead",
+            "time": 179382250
+          }
+        ]
+      },
+      {
+        "time": 133295922,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 44120
+          },
+          {
+            "name": "WroteRequest",
+            "time": 46356
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 133101337
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 133187816
+          },
+          {
+            "name": "BodyRead",
+            "time": 133295922
+          }
+        ]
+      },
+      {
+        "time": 246534193,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 75283
+          },
+          {
+            "name": "WroteRequest",
+            "time": 76182
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 246406339
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 246496654
+          },
+          {
+            "name": "BodyRead",
+            "time": 246534193
+          }
+        ]
+      },
+      {
+        "time": 237692509,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 802931
+          },
+          {
+            "name": "ConnectDone",
+            "time": 21154219
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 21275681
+          },
+          {
+            "name": "WroteRequest",
+            "time": 21278344
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 237582189
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 237641756
+          },
+          {
+            "name": "BodyRead",
+            "time": 237692509
+          }
+        ]
+      },
+      {
+        "time": 355446529,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1576119
+          },
+          {
+            "name": "ConnectDone",
+            "time": 17227000
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 17394403
+          },
+          {
+            "name": "WroteRequest",
+            "time": 17396474
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 355220514
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 355281083
+          },
+          {
+            "name": "BodyRead",
+            "time": 355446529
+          }
+        ]
+      },
+      {
+        "time": 238017778,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1292857
+          },
+          {
+            "name": "ConnectDone",
+            "time": 28277687
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 28358363
+          },
+          {
+            "name": "WroteRequest",
+            "time": 28361647
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 237880329
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 237971062
+          },
+          {
+            "name": "BodyRead",
+            "time": 238017778
+          }
+        ]
+      },
+      {
+        "time": 238651250,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 68524
+          },
+          {
+            "name": "WroteRequest",
+            "time": 73552
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 238497034
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 238584842
+          },
+          {
+            "name": "BodyRead",
+            "time": 238651250
+          }
+        ]
+      },
+      {
+        "time": 238802431,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 47942
+          },
+          {
+            "name": "WroteRequest",
+            "time": 51199
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 238481747
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 238542671
+          },
+          {
+            "name": "BodyRead",
+            "time": 238802431
+          }
+        ]
+      },
+      {
+        "time": 238549314,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1627136
+          },
+          {
+            "name": "ConnectDone",
+            "time": 28527813
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 28620102
+          },
+          {
+            "name": "WroteRequest",
+            "time": 28623296
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 238239841
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 238335903
+          },
+          {
+            "name": "BodyRead",
+            "time": 238549314
+          }
+        ]
+      },
+      {
+        "time": 238924786,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1784000
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 13096132
+          },
+          {
+            "name": "WroteRequest",
+            "time": 13103375
+          },
+          {
+            "name": "ConnectDone",
+            "time": 28627367
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 238597552
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 238658602
+          },
+          {
+            "name": "BodyRead",
+            "time": 238924786
+          }
+        ]
+      },
+      {
+        "time": 238818674,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1574897
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 28622155
+          },
+          {
+            "name": "WroteRequest",
+            "time": 28625446
+          },
+          {
+            "name": "ConnectDone",
+            "time": 28713957
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 238579347
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 238629410
+          },
+          {
+            "name": "BodyRead",
+            "time": 238818674
+          }
+        ]
+      },
+      {
+        "time": 129973368,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 190754
+          },
+          {
+            "name": "WroteRequest",
+            "time": 191852
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 129697981
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 129853643
+          },
+          {
+            "name": "BodyRead",
+            "time": 129973368
+          }
+        ]
+      },
+      {
+        "time": 354559531,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 82947
+          },
+          {
+            "name": "WroteRequest",
+            "time": 86740
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 354394022
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 354484445
+          },
+          {
+            "name": "BodyRead",
+            "time": 354559531
+          }
+        ]
+      },
+      {
+        "time": 241342556,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 51939
+          },
+          {
+            "name": "WroteRequest",
+            "time": 55043
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 241043991
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 241165699
+          },
+          {
+            "name": "BodyRead",
+            "time": 241342556
+          }
+        ]
+      },
+      {
+        "time": 129109497,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 80031
+          },
+          {
+            "name": "WroteRequest",
+            "time": 85799
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 128742873
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 128882751
+          },
+          {
+            "name": "BodyRead",
+            "time": 129109497
+          }
+        ]
+      },
+      {
+        "time": 141368836,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 486759
+          },
+          {
+            "name": "WroteRequest",
+            "time": 493467
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 141226078
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 141284302
+          },
+          {
+            "name": "BodyRead",
+            "time": 141368836
+          }
+        ]
+      },
+      {
+        "time": 253749927,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1348514
+          },
+          {
+            "name": "ConnectDone",
+            "time": 17353806
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 17436740
+          },
+          {
+            "name": "WroteRequest",
+            "time": 17438914
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 253391779
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 253463602
+          },
+          {
+            "name": "BodyRead",
+            "time": 253749927
+          }
+        ]
+      },
+      {
+        "time": 150073145,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2236458
+          },
+          {
+            "name": "ConnectDone",
+            "time": 17274861
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 17560048
+          },
+          {
+            "name": "WroteRequest",
+            "time": 17564261
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 149831575
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 149950582
+          },
+          {
+            "name": "BodyRead",
+            "time": 150073145
+          }
+        ]
+      },
+      {
+        "time": 260647622,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1754697
+          },
+          {
+            "name": "ConnectDone",
+            "time": 22802065
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 22880179
+          },
+          {
+            "name": "WroteRequest",
+            "time": 22939608
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 260472538
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 260584808
+          },
+          {
+            "name": "BodyRead",
+            "time": 260647622
+          }
+        ]
+      },
+      {
+        "time": 260520677,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1545671
+          },
+          {
+            "name": "ConnectDone",
+            "time": 22676925
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 22718792
+          },
+          {
+            "name": "WroteRequest",
+            "time": 22721350
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 260328117
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 260461833
+          },
+          {
+            "name": "BodyRead",
+            "time": 260520677
+          }
+        ]
+      },
+      {
+        "time": 261400819,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2332072
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 17682844
+          },
+          {
+            "name": "WroteRequest",
+            "time": 17685508
+          },
+          {
+            "name": "ConnectDone",
+            "time": 23229059
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 261043795
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 261118675
+          },
+          {
+            "name": "BodyRead",
+            "time": 261400819
+          }
+        ]
+      },
+      {
+        "time": 135970398,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 72183
+          },
+          {
+            "name": "WroteRequest",
+            "time": 77353
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 134439631
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 135569471
+          },
+          {
+            "name": "BodyRead",
+            "time": 135970398
+          }
+        ]
+      },
+      {
+        "time": 245278612,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 58648
+          },
+          {
+            "name": "WroteRequest",
+            "time": 62066
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 244918576
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 245164176
+          },
+          {
+            "name": "BodyRead",
+            "time": 245278612
+          }
+        ]
+      },
+      {
+        "time": 355606867,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 168130
+          },
+          {
+            "name": "WroteRequest",
+            "time": 171714
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 355009842
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 355549036
+          },
+          {
+            "name": "BodyRead",
+            "time": 355606867
+          }
+        ]
+      },
+      {
+        "time": 224657310,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2166636
+          },
+          {
+            "name": "ConnectDone",
+            "time": 23245025
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 23350032
+          },
+          {
+            "name": "WroteRequest",
+            "time": 23354055
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 224364736
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 224405460
+          },
+          {
+            "name": "BodyRead",
+            "time": 224657310
+          }
+        ]
+      },
+      {
+        "time": 234355070,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 2072047
+          },
+          {
+            "name": "ConnectDone",
+            "time": 20860594
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 21103387
+          },
+          {
+            "name": "WroteRequest",
+            "time": 21105443
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 233622514
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 233669893
+          },
+          {
+            "name": "BodyRead",
+            "time": 234355070
+          }
+        ]
+      },
+      {
+        "time": 247782433,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1760305
+          },
+          {
+            "name": "ConnectDone",
+            "time": 17902911
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 18080916
+          },
+          {
+            "name": "WroteRequest",
+            "time": 18088010
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 246180392
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 246621903
+          },
+          {
+            "name": "BodyRead",
+            "time": 247782433
+          }
+        ]
+      },
+      {
+        "time": 235234844,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1795767
+          },
+          {
+            "name": "ConnectDone",
+            "time": 20610689
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 20738180
+          },
+          {
+            "name": "WroteRequest",
+            "time": 20741857
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 232896681
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 233134648
+          },
+          {
+            "name": "BodyRead",
+            "time": 235234844
+          }
+        ]
+      },
+      {
+        "time": 130385135,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 81655
+          },
+          {
+            "name": "WroteRequest",
+            "time": 87688
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 130284034
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 130346193
+          },
+          {
+            "name": "BodyRead",
+            "time": 130385135
+          }
+        ]
+      },
+      {
+        "time": 243743017,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 120815
+          },
+          {
+            "name": "WroteRequest",
+            "time": 125131
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 243532325
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 243676659
+          },
+          {
+            "name": "BodyRead",
+            "time": 243743017
+          }
+        ]
+      },
+      {
+        "time": 243656625,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 3087056
+          },
+          {
+            "name": "WroteRequest",
+            "time": 3105900
+          },
+          {
+            "name": "DNSDone",
+            "time": 4246693
+          },
+          {
+            "name": "ConnectDone",
+            "time": 27224620
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 243178211
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 243278303
+          },
+          {
+            "name": "BodyRead",
+            "time": 243656625
+          }
+        ]
+      },
+      {
+        "time": 188009037,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 76365
+          },
+          {
+            "name": "WroteRequest",
+            "time": 80796
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 187578604
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 187929860
+          },
+          {
+            "name": "BodyRead",
+            "time": 188009037
+          }
+        ]
+      },
+      {
+        "time": 131127146,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 130312
+          },
+          {
+            "name": "WroteRequest",
+            "time": 165983
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 130836473
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 130981935
+          },
+          {
+            "name": "BodyRead",
+            "time": 131127146
+          }
+        ]
+      },
+      {
+        "time": 241634148,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1618231
+          },
+          {
+            "name": "ConnectDone",
+            "time": 16931564
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 17116030
+          },
+          {
+            "name": "WroteRequest",
+            "time": 17120117
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 241430947
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 241516922
+          },
+          {
+            "name": "BodyRead",
+            "time": 241634148
+          }
+        ]
+      },
+      {
+        "time": 242142135,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1954667
+          },
+          {
+            "name": "ConnectDone",
+            "time": 23442595
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 23584331
+          },
+          {
+            "name": "WroteRequest",
+            "time": 23585961
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 241890055
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 241953259
+          },
+          {
+            "name": "BodyRead",
+            "time": 242142135
+          }
+        ]
+      },
+      {
+        "time": 242449555,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "WroteHeaders",
+            "time": 96254
+          },
+          {
+            "name": "WroteRequest",
+            "time": 104668
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 242130771
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 242194028
+          },
+          {
+            "name": "BodyRead",
+            "time": 242449555
+          }
+        ]
+      },
+      {
+        "time": 241717203,
+        "code": 200,
+        "bytes": 46,
+        "events": [
+          {
+            "name": "DNSDone",
+            "time": 1350075
+          },
+          {
+            "name": "ConnectDone",
+            "time": 22923136
+          },
+          {
+            "name": "WroteHeaders",
+            "time": 22991790
+          },
+          {
+            "name": "WroteRequest",
+            "time": 22995691
+          },
+          {
+            "name": "GotFirstResponseByte",
+            "time": 241198232
+          },
+          {
+            "name": "PutIdleConn",
+            "time": 241271634
+          },
+          {
+            "name": "BodyRead",
+            "time": 241717203
+          }
+        ]
+      }
+    ],
+    "length": 100,
+    "success": 100,
+    "fail": 0,
+    "duration": 2952784908
+  },
+  "metadata": {
+    "config": {
+      "request": {
+        "method": "GET",
+        "url": {
+          "Scheme": "http",
+          "Opaque": "",
+          "User": null,
+          "Host": "echo.jsontest.com",
+          "Path": "/title/ipsum/content/blah",
+          "RawPath": "",
+          "ForceQuery": false,
+          "RawQuery": "",
+          "Fragment": "",
+          "RawFragment": ""
+        },
+        "header": {},
+        "body": {
+          "type": "",
+          "content": null
+        }
+      },
+      "runner": {
+        "requests": 100,
+        "concurrency": 10,
+        "interval": 50000000,
+        "requestTimeout": 2000000000,
+        "globalTimeout": 30000000000
+      }
+    },
+    "finishedAt": "2022-03-10T21:31:03.079214+01:00"
+  }
+}

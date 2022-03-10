@@ -12,8 +12,9 @@ import (
 type urlpath string
 
 const (
-	urlpathDebug    urlpath = "/debug"
-	urlpathIdentity urlpath = "/identity"
+	urlpathDebug      urlpath = "/debug"
+	urlpathIdentity   urlpath = "/identity"
+	urlpathReportMock urlpath = "/report"
 )
 
 type paramkey string
@@ -29,6 +30,8 @@ func (s *Server) handle(w http.ResponseWriter, r *http.Request) {
 		s.handleDebug(w, r)
 	case urlpathIdentity:
 		s.handleIdentity(w, r)
+	case urlpathReportMock:
+		s.handleMockReport(w, r)
 	default:
 		s.handleRequest(w, r)
 	}
@@ -78,6 +81,14 @@ func (s *Server) handleIdentity(w http.ResponseWriter, r *http.Request) {
 
 func (s *Server) handleDebug(w http.ResponseWriter, _ *http.Request) {
 	w.Write([]byte(strconv.Itoa(int(s.requestCount))))
+}
+
+func pathToMocks(file string) string {
+	return fmt.Sprintf("./mocks/%s", file)
+}
+
+func (s *Server) handleMockReport(w http.ResponseWriter, r *http.Request) {
+	http.ServeFile(w, r, pathToMocks("report-get.json"))
 }
 
 // helpers
