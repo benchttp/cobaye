@@ -10,7 +10,7 @@ import (
 	"github.com/drykit-go/testx"
 	"github.com/drykit-go/testx/check"
 
-	"github.com/benchttp/cobaye/internal/server"
+	"github.com/benchttp/cobaye/server"
 )
 
 func TestHandleRequest(t *testing.T) {

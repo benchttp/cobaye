@@ -4,7 +4,7 @@ import (
 	"flag"
 	"log"
 
-	"github.com/benchttp/cobaye/internal/server"
+	"github.com/benchttp/cobaye/server"
 )
 
 const defaultPort = "9999"
