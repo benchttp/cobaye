@@ -2,18 +2,10 @@ package server
 
 import (
 	"fmt"
-	"io"
 	"net/http"
 	"net/url"
 	"strconv"
 	"time"
-)
-
-type urlpath string
-
-const (
-	urlpathDebug    urlpath = "/debug"
-	urlpathIdentity urlpath = "/identity"
 )
 
 type paramkey string
@@ -23,31 +15,22 @@ const (
 	paramkeyFib   paramkey = "fib"
 )
 
-func (s *Server) handle(w http.ResponseWriter, r *http.Request) {
-	switch urlpath(r.URL.Path) {
-	case urlpathDebug:
-		s.handleDebug(w, r)
-	case urlpathIdentity:
-		s.handleIdentity(w, r)
-	default:
-		s.handleRequest(w, r)
-	}
-}
-
-func (s *Server) handleRequest(w http.ResponseWriter, r *http.Request) {
+func (s *Server) handleFibonacci(w http.ResponseWriter, r *http.Request) {
 	s.incrementRequestCount()
 
 	params := r.URL.Query()
 
 	delay, err := readParamDuration(params, paramkeyDelay)
 	if err != nil {
-		respondError(w, 400, err)
+		w.WriteHeader(400)
+		w.Write([]byte(err.Error()))
 		return
 	}
 
 	fibInt, err := readParamInt(params, paramkeyFib)
 	if err != nil {
-		respondError(w, 400, err)
+		w.WriteHeader(400)
+		w.Write([]byte(err.Error()))
 		return
 	}
 
@@ -59,28 +42,6 @@ func (s *Server) handleRequest(w http.ResponseWriter, r *http.Request) {
 		_ = fibonacci(fibInt)
 	}
 }
-
-func (s *Server) handleIdentity(w http.ResponseWriter, r *http.Request) {
-	for key, vals := range r.Header {
-		for _, val := range vals {
-			w.Header().Add(key, val)
-		}
-	}
-
-	b, err := io.ReadAll(r.Body)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-
-	w.Write(b)
-}
-
-func (s *Server) handleDebug(w http.ResponseWriter, _ *http.Request) {
-	w.Write([]byte(strconv.Itoa(int(s.requestCount))))
-}
-
-// helpers
 
 func readParamInt(params url.Values, key paramkey) (int, error) {
 	raw := params.Get(string(key))
@@ -110,7 +71,9 @@ func readParamDuration(params url.Values, key paramkey) (time.Duration, error) {
 	return d, nil
 }
 
-func respondError(w http.ResponseWriter, code int, err error) {
-	w.WriteHeader(code)
-	w.Write([]byte(err.Error()))
+func fibonacci(n int) int {
+	if n < 2 {
+		return n
+	}
+	return fibonacci(n-1) + fibonacci(n-2)
 }
