@@ -17,9 +17,15 @@ func New(port string) *Server {
 	return &Server{port: port}
 }
 
+func enableCors(w *http.ResponseWriter) {
+	(*w).Header().Set("Access-Control-Allow-Origin", "*")
+}
+
 func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	var root string
 	root, r.URL.Path = shiftPath(r.URL.Path)
+
+	enableCors(&w)
 
 	switch root {
 	case "debug":
