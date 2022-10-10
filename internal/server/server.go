@@ -26,7 +26,7 @@ func (s *Server) ListenAndServe() error {
 	addr := "localhost:" + s.port
 	fmt.Printf("http://%s\n", addr)
 	go s.listenStdin()
-	return http.ListenAndServe(addr, s)
+	return http.ListenAndServe(addr, s) //nolint:gosec // local use only
 }
 
 func (s *Server) listenStdin() {
