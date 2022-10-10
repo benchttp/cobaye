@@ -9,10 +9,13 @@ import (
 
 const defaultPort = "9999"
 
-var port = flag.String("port", defaultPort, "listening port")
+var (
+	port        = flag.String("port", defaultPort, "listening port")
+	ignoreStdin = flag.Bool("ignoreStdin", false, "do not listen stdin while serving")
+)
 
 func main() {
 	flag.Parse()
-	s := server.New(*port)
+	s := server.New(*port, *ignoreStdin)
 	log.Fatal(s.ListenAndServe())
 }

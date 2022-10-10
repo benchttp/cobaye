@@ -9,13 +9,17 @@ import (
 )
 
 type Server struct {
-	port string
+	port        string
+	ignoreStdin bool
 
 	requestCount int64
 }
 
-func New(port string) *Server {
-	return &Server{port: port}
+func New(port string, ignoreStdin bool) *Server {
+	return &Server{
+		port:        port,
+		ignoreStdin: ignoreStdin,
+	}
 }
 
 func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
@@ -30,14 +34,16 @@ func (s *Server) ListenAndServe() error {
 }
 
 func (s *Server) listenStdin() {
-	reader := bufio.NewReader(os.Stdin)
+	if s.ignoreStdin {
+		return
+	}
 
+	reader := bufio.NewReader(os.Stdin)
 	for {
 		line, _, err := reader.ReadLine()
 		if err != nil {
 			fmt.Println(err) // non critical
 		}
-
 		if string(line) == "debug" {
 			fmt.Printf("Total requests: %d\n", s.requestCount)
 		}
