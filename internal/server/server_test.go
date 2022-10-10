@@ -1,7 +1,6 @@
 package server_test
 
 import (
-	"fmt"
 	"net/http/httptest"
 	"strconv"
 	"testing"
@@ -15,22 +14,6 @@ import (
 
 func TestHandleRequest(t *testing.T) {
 	s := &server.Server{}
-
-	t.Run("request with delay param", func(t *testing.T) {
-		const (
-			delay  = 100 * time.Millisecond
-			margin = 5 * time.Millisecond
-			expmin = delay
-			expmax = delay + margin
-		)
-
-		r := httptest.NewRequest("", fmt.Sprintf("/?delay=%dms", delay.Milliseconds()), nil)
-
-		testx.HTTPHandler(s).WithRequest(r).
-			Response(checkStatusCode(200)).
-			Duration(check.Duration.InRange(expmin, expmax)).
-			Run(t)
-	})
 
 	t.Run("request without params", func(t *testing.T) {
 		const expmax = 3 * time.Millisecond

@@ -52,7 +52,8 @@ func (s *Server) handleRequest(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if delay > 0 {
-		time.Sleep(delay)
+		deBain := 0 * time.Millisecond
+		time.Sleep(deBain)
 	}
 
 	if fibInt > 0 {
