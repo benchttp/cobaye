@@ -3,6 +3,7 @@ package server
 import (
 	"fmt"
 	"io"
+	"math/rand"
 	"net/http"
 	"net/url"
 	"strconv"
@@ -19,8 +20,9 @@ const (
 type paramkey string
 
 const (
-	paramkeyDelay paramkey = "delay"
-	paramkeyFib   paramkey = "fib"
+	paramkeyDelay       paramkey = "delay"
+	paramkeyDelayAround paramkey = "delay_around"
+	paramkeyFib         paramkey = "fib"
 )
 
 func (s *Server) handle(w http.ResponseWriter, r *http.Request) {
@@ -45,6 +47,12 @@ func (s *Server) handleRequest(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	delayAround, err := readParamDuration(params, paramkeyDelayAround)
+	if err != nil {
+		respondError(w, 400, err)
+		return
+	}
+
 	fibInt, err := readParamInt(params, paramkeyFib)
 	if err != nil {
 		respondError(w, 400, err)
@@ -53,6 +61,12 @@ func (s *Server) handleRequest(w http.ResponseWriter, r *http.Request) {
 
 	if delay > 0 {
 		time.Sleep(delay)
+	}
+
+	if delayAround > 0 {
+		half := delayAround / 2
+		//nolint:gosec // local use only
+		time.Sleep(half + time.Duration(rand.Int63n(int64(half))))
 	}
 
 	if fibInt > 0 {
