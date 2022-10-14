@@ -1,0 +1,20 @@
+request:
+  url: http://localhost:9999?delay=200ms
+
+runner:
+  requests: 10
+  concurrency: 2
+
+tests:
+  - name: Delay is properly applied
+    field: ResponseTimes.Min
+    predicate: GTE
+    target: 200ms
+  - name: Delays are similar
+    field: ResponseTimes.StdDev
+    predicate: LT
+    target: 50ms
+  - name: 100% availability
+    field: RequestFailureCount
+    predicate: EQ
+    target: 0

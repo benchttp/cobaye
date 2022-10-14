@@ -32,21 +32,6 @@ func TestHandleRequest(t *testing.T) {
 			Run(t)
 	})
 
-	t.Run("request with fib param", func(t *testing.T) {
-		const (
-			fib    = 35
-			expmin = 30 * time.Millisecond
-			expmax = 80 * time.Millisecond
-		)
-
-		r := httptest.NewRequest("", fmt.Sprintf("/?fib=%d", fib), nil)
-
-		testx.HTTPHandler(s).WithRequest(r).
-			Response(checkStatusCode(200)).
-			Duration(check.Duration.InRange(expmin, expmax)).
-			Run(t)
-	})
-
 	t.Run("request without params", func(t *testing.T) {
 		const expmax = 3 * time.Millisecond
 
